@@ -40,4 +40,12 @@
         
             $path->set(1);
         }
+        
+        public function testClean()
+        {
+            $path = new path('/hello/bob/');
+            
+            $this->assertSame('hello/bob', $path->clean('/hello/bob/'));
+            
+        }
     }

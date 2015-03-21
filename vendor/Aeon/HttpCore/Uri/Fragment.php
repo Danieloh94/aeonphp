@@ -30,10 +30,6 @@
                 ));
             }
             
-            if (strpos($fragment, '#') === 0) {
-                $fragment = substr($fragment, 1);
-            }
-            
             $this->fragment = $this->clean($fragment);
         }
         

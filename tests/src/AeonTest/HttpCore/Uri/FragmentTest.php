@@ -36,4 +36,11 @@
         
             $fragment->set(1);
         }
+        
+        public function testClean()
+        {
+            $fragment = new Fragment('href');
+            
+            $this->assertSame('href', $fragment->clean('#href'));
+        }
     }

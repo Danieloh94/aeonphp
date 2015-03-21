@@ -30,10 +30,6 @@
                 ));
             }
             
-            if (strpos($query, '?') === 0) {
-                $query = substr($query, 1);
-            }
-            
             $this->query = $this->clean($query);
         }
         

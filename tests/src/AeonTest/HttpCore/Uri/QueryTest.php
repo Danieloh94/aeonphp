@@ -36,4 +36,11 @@
         
             $query->set(1);
         }
+        
+        public function testClean()
+        {
+            $query = new Query('name=bob');
+            
+            $this->assertSame('name=bob', $query->clean('?name=bob'));
+        }
     }
