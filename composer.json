@@ -8,10 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Aeon\\": "vendor/Aeon/",
+            "Aeon\\": "vendor/Aeon/"
         }
-    }, 
-    "require-dev": {
-    	"scrutinizer/ocular": "~1.1"
     }
 }
