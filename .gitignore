@@ -1,0 +1,9 @@
+.settings
+.project
+.buildpath
+*.travis.yml~
+*.gitignore~
+/covergae.html/
+/vendor/composer/
+/vendor/autoload.php
+/public/index.php

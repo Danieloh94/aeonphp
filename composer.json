@@ -1,0 +1,17 @@
+{
+    "name": "aeon/framework",
+    "authors": [
+        {
+            "name": "Daniel Heath",
+            "email": "daniel@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aeon\\": "vendor/Aeon/",
+        }
+    }, 
+    "require-dev": {
+    	"scrutinizer/ocular": "~1.1"
+    }
+}
