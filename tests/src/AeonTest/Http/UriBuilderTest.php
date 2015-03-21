@@ -19,6 +19,10 @@
                 'http://bob:secret@localhost:80/foo/bar/?name=bob#href', 
                 $this->uriBuilder->fromString('http://bob:secret@localhost:80/foo/bar/?name=bob#href')->__toString()
             );
+            
+            $this->setExpectedException('InvalidArgumentException');
+            
+            $this->uriBuilder->fromString(1);
         }
         
         public function testFromArgs()
