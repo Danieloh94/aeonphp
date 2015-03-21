@@ -23,7 +23,7 @@
                 ));
             }
 
-            return $this->fromParts(parse_url($uri));
+            return $this->fromParts($this->parseUri($uri));
         }
         
         public function fromArgs(
@@ -121,6 +121,19 @@
         {
             if ($fragment !== null) {
                 return new Fragment($fragment);
+            }
+        }
+        
+        public function parseUri($uri)
+        {
+            $parts = parse_url($uri);
+            
+            if ($parts !== false) {
+                return $parts;
+            } else {
+                throw new \LogicException(sprintf(
+                    'unable to pass uri, uri may be malformed, "%s" recieved.', $uri
+                ));
             }
         }
     }

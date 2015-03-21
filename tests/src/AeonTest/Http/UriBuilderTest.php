@@ -57,4 +57,13 @@
             $this->assertSame('localhost', $this->uriBuilder->getPart('host', parse_url('http://localhost')));
             $this->assertNull($this->uriBuilder->getPart('port', parse_url('http://localhost')));
         }
+        
+        public function testParseUri()
+        {
+            $this->assertInternalType('array', $this->uriBuilder->parseUri('http://localhost'));
+            
+            $this->setExpectedException('LogicException');
+            
+            $this->uriBuilder->parseUri('http://:80');
+        }
     }
