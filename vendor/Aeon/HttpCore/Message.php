@@ -8,6 +8,10 @@
     
     class Message
     {
+        protected $body;
+        protected $headers;
+        protected $protocol;
+        
         public function __construct($body, $headers, $protocol)
         {
             $this->setBody($body);

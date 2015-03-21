@@ -6,6 +6,8 @@
     
     class Response extends Message
     {
+        protected $status;
+        
         public function __construct($status, $body, $headers, $protocol)
         {
             $this->setStatus($status);
