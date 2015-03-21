@@ -55,7 +55,7 @@
             if (is_string($body)) {
                 $body = new Body(fopen($body, 'wb+'));
             } elseif (is_resource($body)) {
-                $body = new Body($resource);
+                $body = new Body($body);
             }
             
             return $body;

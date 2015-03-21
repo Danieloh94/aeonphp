@@ -16,6 +16,13 @@
     {
         public function fromString($uri)
         {
+            if (!is_string($uri)) {
+                throw new \InvalidArgumentException(sprintf(
+                    'uri must be of type string, "%s" recieved.',
+                    is_object($uri) ? get_class($uri) : gettype($uri)
+                ));
+            }
+
             return $this->fromParts(parse_url($uri));
         }
         
