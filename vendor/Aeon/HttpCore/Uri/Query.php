@@ -34,6 +34,15 @@
                 $query = substr($query, 1);
             }
             
-            $this->query = $query;
+            $this->query = $this->clean($query);
+        }
+        
+        public function clean($query)
+        {
+            if (strpos($query, '?') === 0) {
+                $query = substr($query, 1);
+            }
+            
+            return $query;
         }
     }

@@ -34,10 +34,15 @@
                 ));
             }
             
+            $this->path = $this->clean($path);
+        }
+        
+        public function clean($path) 
+        {
             if ($path === '/') {
-                $this->path = $path;
-            } else {
-                $this->path = trim($path, '/');
+                return $path;
             }
+            
+            return trim($path, '/');
         }
     }

@@ -34,6 +34,15 @@
                 $fragment = substr($fragment, 1);
             }
             
-            $this->fragment = $fragment;
+            $this->fragment = $this->clean($fragment);
+        }
+        
+        public function clean($fragment)
+        {
+            if (strpos($fragment, '#') === 0) {
+                $fragment = substr($fragment, 1);
+            }
+            
+            return $fragment;
         }
     }
