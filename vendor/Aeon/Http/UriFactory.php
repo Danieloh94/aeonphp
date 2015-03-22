@@ -12,7 +12,7 @@
     use \Aeon\HttpCore\Uri\Fragment;
     use \Aeon\HttpCore\Uri;
     
-    class UriBuilder
+    class UriFactory
     {
         public function fromString($uri)
         {

@@ -2,16 +2,16 @@
 
     namespace AeonTest\Http;
     
-    use \Aeon\Http\RequestBuilder;
-    use \Aeon\Http\UriBuilder;
+    use \Aeon\Http\RequestFactory;
+    use \Aeon\Http\UriFactory;
 				
-    class RequestBuilderTest extends \PHPUnit_Framework_TestCase
+    class RequestFactoryTest extends \PHPUnit_Framework_TestCase
     {
         public function testFromArgs()
         {
-            $request = (new RequestBuilder( new UriBuilder))->fromArgs('get', 'http://localhost', 'php://memory', [], '1.1');
+            $request = (new RequestFactory( new UriFactory))->fromArgs('get', 'http://localhost', 'php://memory', [], '1.1');
             $this->assertInstanceOf('Aeon\HttpCore\Request', $request);
-            $request = (new RequestBuilder( new UriBuilder))->fromArgs(
+            $request = (new RequestFactory(new UriFactory))->fromArgs(
                 'get', 
                 parse_url('http://localhost'), 
                 fopen('php://memory', 'wb+'), 
