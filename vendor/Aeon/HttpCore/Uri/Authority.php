@@ -2,11 +2,12 @@
 
     namespace Aeon\HttpCore\Uri;
     
-    use \Aeon\HttpCore\Uri\Authority\UserInfo;
-    use \Aeon\HttpCore\Uri\Authority\Host;
-    use \Aeon\HttpCore\Uri\Authority\Port;
+    use \Aeon\Contract\HttpCore\Uri\Authority\UserInfoContract;
+    use \Aeon\Contract\HttpCore\Uri\Authority\HostContract;
+    use \Aeon\Contract\HttpCore\Uri\Authority\PortContract;
+    use \Aeon\Contract\HttpCore\Uri\AuthorityContract;
     
-    class Authority
+    class Authority implements AuthorityContract
     {
         protected $host;
         protected $userInfo;
@@ -35,7 +36,7 @@
             return $this->userInfo;
         }
         
-        public function setUserInfo(UserInfo  $userInfo = null)
+        public function setUserInfo(UserInfoContract  $userInfo)
         {
             $this->userInfo = $userInfo;
         }
@@ -45,7 +46,7 @@
             return $this->host;
         }
         
-        public function setHost(Host $host = null)
+        public function setHost(HostContract $host)
         {       
             $this->host = $host;
         }
@@ -55,7 +56,7 @@
             return $this->port;
         }
         
-        public function setPort(Port $port = null)
+        public function setPort(PortContract $port)
         {
             $this->port = $port;
         }

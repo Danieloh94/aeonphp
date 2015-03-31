@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri\Authority;
     
-    class Port
+    use \Aeon\Contract\HttpCore\Uri\Authority\PortContract;
+    
+    class Port implements PortContract
     {
         protected $port;
         

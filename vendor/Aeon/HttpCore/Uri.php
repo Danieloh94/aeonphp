@@ -2,13 +2,14 @@
 
     namespace Aeon\HttpCore;
     
-    use \Aeon\HttpCore\Uri\Scheme;
-    use \Aeon\HttpCore\Uri\Authority;
-    use \Aeon\HttpCore\Uri\Path;
-    use \Aeon\HttpCore\Uri\Query;
-    use \Aeon\HttpCore\Uri\Fragment;
-    
-    class Uri
+    use \Aeon\Contract\HttpCore\Uri\SchemeContract;
+    use \Aeon\Contract\HttpCore\Uri\AuthorityContract;
+    use \Aeon\Contract\HttpCore\Uri\PathContract;
+    use \Aeon\Contract\HttpCore\Uri\QueryContract;
+    use \Aeon\Contract\HttpCore\Uri\FragmentContract;
+    use \Aeon\Contract\HttpCore\UriContract;
+				    
+    class Uri implements UriContract
     {
         protected $scheme;
         protected $authority;
@@ -42,7 +43,7 @@
         
         public function setScheme($scheme)
         {
-            if ($scheme instanceOf Scheme) {
+            if ($scheme instanceOf SchemeContract) {
                 $this->scheme = $scheme;
             }
             
@@ -54,7 +55,7 @@
             return $this->authority;
         }
         
-        public function setAuthority(Authority $authority)
+        public function setAuthority(AuthorityContract $authority)
         {
             $this->authority = $authority;
             
@@ -68,7 +69,7 @@
         
         public function setPath($path)
         {
-            if ($path instanceOf Path) {
+            if ($path instanceOf PathContract) {
                 $this->path = $path;
             }
             
@@ -82,7 +83,7 @@
         
         public function setQuery($query)
         {
-            if ($query instanceOf Query) {
+            if ($query instanceOf QueryContract) {
                 $this->query = $query;   
             }
             
@@ -96,7 +97,7 @@
         
         public function setFragment($fragment)
         {
-            if ($fragment instanceOf Fragment) {
+            if ($fragment instanceOf FragmentContract) {
                 $this->fragment = $fragment;
             }
             

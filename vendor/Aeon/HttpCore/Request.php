@@ -2,11 +2,12 @@
 
     namespace Aeon\HttpCore;
     
-    use \Aeon\HttpCore\Message;
-    use \Aeon\HttpCore\Request\Method;
-    use \Aeon\HttpCore\Uri;
-    
-    class Request extends Message
+    use \Aeon\Contract\HttpCore\MessageContract;
+    use \Aeon\Contract\HttpCore\Request\MethodContract;
+    use \Aeon\Contract\HttpCore\UriContract;
+    use Aeon\Contract\HttpCore\RequestContract;
+				    
+    class Request extends Message implements RequestContract
     {
         protected $method;
         protected $uri;
@@ -24,12 +25,17 @@
             return (string) $this->method.' '.$this->uri.' '.$this->protocol."\r\n".$this->headers."\r\n".$this->body;
         }
         
+        public function getRequestLine()
+        {
+            return (string) $this->method.' '.$this->uri.' '.$this->protocol;
+        }
+        
         public function getMethod()
         {
             return $this->method;
         }
         
-        public function setMethod(Method $method)
+        public function setMethod(MethodContract $method)
         {
             $this->method = $method;
         }
@@ -39,7 +45,7 @@
             return $this->uri;
         }
         
-        public function setUri(Uri $uri)
+        public function setUri(UriContract $uri)
         {
             $this->uri = $uri;
         }

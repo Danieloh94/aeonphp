@@ -64,7 +64,7 @@
                 new UserInfo('bob')
             );
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\UserInfo', $authority->getUserInfo());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\UserInfoContract', $authority->getUserInfo());
             
             $authority = new Authority(
                 new Host('localhost')
@@ -81,7 +81,7 @@
 
             $authority->setUserInfo(new UserInfo('bob', 'secret'));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\UserInfo', $authority->getUserInfo());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\UserInfoContract', $authority->getUserInfo());
             
         }
         
@@ -91,7 +91,7 @@
                 new Host('localhost')
             );
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\Host', $authority->getHost());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\HostContract', $authority->getHost());
         }
         
         public function testSetHost()
@@ -102,7 +102,7 @@
             
             $authority->setHost(new Host('foobar'));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\Host', $authority->getHost());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\HostContract', $authority->getHost());
             
         }
         
@@ -114,7 +114,7 @@
                 new Port(80)
             );
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\Port', $authority->getPort());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\PortContract', $authority->getPort());
         }
         
         public function testSetPort()
@@ -125,7 +125,7 @@
             
             $authority->setPort(new Port(80));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority\Port', $authority->getPort());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\Authority\PortContract', $authority->getPort());
         }
         
     }

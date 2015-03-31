@@ -14,4 +14,7 @@
 			<directory>tests/src/AeonTest</directory>
 		</testsuite>
 	</testsuites>
+	<php>
+ 		
+	</php>
 </phpunit>

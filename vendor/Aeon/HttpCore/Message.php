@@ -2,11 +2,12 @@
 
     namespace Aeon\HttpCore;
     
-    use \Aeon\HttpCore\Message\Body;
-    use \Aeon\HttpCore\Message\Headers;
-    use \Aeon\HttpCore\Message\Protocol;
-    
-    class Message
+    use \Aeon\Contract\HttpCore\Message\BodyContract;
+    use \Aeon\Contract\HttpCore\Message\HeadersContract;
+    use \Aeon\Contract\HttpCore\Message\ProtocolContract;
+    use \Aeon\Contract\HttpCore\MessageContract;
+				    
+    class Message implements MessageContract
     {
         protected $body;
         protected $headers;
@@ -24,7 +25,7 @@
             return $this->body;
         }
         
-        public function setBody(Body $body)
+        public function setBody(BodyContract $body)
         {
             $this->body = $body;
         }
@@ -34,7 +35,7 @@
             return $this->headers;
         }
         
-        public function setHeaders(Headers $headers)
+        public function setHeaders(HeadersContract $headers)
         {
             $this->headers = $headers;
         }
@@ -44,7 +45,7 @@
             return $this->protocol;
         }
         
-        public function setProtocol(Protocol $protocol)
+        public function setProtocol(ProtocolContract $protocol)
         {
             $this->protocol = $protocol;
         }

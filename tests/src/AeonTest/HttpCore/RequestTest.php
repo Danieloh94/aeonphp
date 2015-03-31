@@ -75,15 +75,23 @@
             $this->request->getBody()->write('message goes here.');
             
             $this->assertSame(
-                "GET http://localhost/foo/bar/ HTTP/1.1\r\nfoo-bar: baz\r\nbar-baz: foo\r\n\r\nmessage goes here.", 
+                "GET http://localhost/foo/bar/ HTTP/1.1\r\nfoo-bar:baz\r\nbar-baz:foo\r\n\r\nmessage goes here.", 
                 $this->request->__toString()
+            );
+        }
+        
+        public function testGetRequestLine()
+        {
+            $this->assertSame(
+                'GET http://localhost/foo/bar/ HTTP/1.1',
+                $this->request->getRequestLine()  
             );
         }
         
         public function testGetMethod()
         {  
             $this->assertInstanceOf(
-                'Aeon\HttpCore\Request\Method', 
+                'Aeon\Contract\HttpCore\Request\MethodContract', 
                 $this->request->getMethod()
             );
         }
@@ -93,7 +101,7 @@
             $this->request->setMethod(new Method('post'));
             
             $this->assertInstanceOf(
-                'Aeon\HttpCore\Request\Method', 
+                'Aeon\Contract\HttpCore\Request\MethodContract', 
                 $this->request->getMethod()
             );
         }
@@ -101,7 +109,7 @@
         public function testGetUri()
         {
             $this->assertInstanceOf(
-                'Aeon\HttpCore\Uri',
+                'Aeon\Contract\HttpCore\UriContract',
                 $this->request->getUri()
             );
         }

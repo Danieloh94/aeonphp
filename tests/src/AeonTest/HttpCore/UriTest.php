@@ -41,7 +41,7 @@
                 )
             );
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority', $uri->getAuthority());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\AuthorityContract', $uri->getAuthority());
         }
         
         public function testSetAuthority()
@@ -56,7 +56,7 @@
                 new Host('www.example.com') 
             ));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Authority', $uri->getAuthority());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\AuthorityContract', $uri->getAuthority());
         }
         
         public function testGetScheme()
@@ -76,7 +76,7 @@
                 new Scheme('http')
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Uri\Scheme', $uri->getScheme());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Uri\SchemeContract', $uri->getScheme());
         }
         
         public function testSetScheme()
@@ -89,7 +89,7 @@
             
             $uri->setScheme(new Scheme('http'));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Scheme', $uri->getScheme());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\SchemeContract', $uri->getScheme());
         }
         
         public function testGetPath()
@@ -110,7 +110,7 @@
                 new Path('/foo/bar/')
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Uri\Path', $uri->getPath());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Uri\PathContract', $uri->getPath());
         }
         
         public function testSetPath()
@@ -123,7 +123,7 @@
             
             $uri->setPath(new Path('foo/bar'));
             
-            $this->assertInstanceOf('Aeon\HttpCore\Uri\Path', $uri->getPath());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Uri\PathContract', $uri->getPath());
         }
         
         public function testGetQuery()
@@ -145,7 +145,7 @@
                 new Query('name=bob')
             );
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Query', $uri->getQuery()); 
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\QueryContract', $uri->getQuery()); 
         }
         
         public function testSetQuery()
@@ -158,7 +158,7 @@
             
             $uri->setQuery(new Query('?name=bob'));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Query', $uri->getQuery());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\QueryContract', $uri->getQuery());
         }
         
         public function testGetFragment()
@@ -181,7 +181,7 @@
                 new Fragment('#hello')
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Uri\Fragment', $uri->getFragment());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Uri\FragmentContract', $uri->getFragment());
         }
         
         public function testSetFragment()
@@ -194,6 +194,6 @@
             
             $uri->setFragment(new Fragment('#href'));
             
-            $this->assertInstanceOf('\Aeon\HttpCore\Uri\Fragment', $uri->getFragment());
+            $this->assertInstanceOf('\Aeon\Contract\HttpCore\Uri\FragmentContract', $uri->getFragment());
         }
     }

@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri;
     
-    class Fragment
+    use \Aeon\Contract\HttpCore\Uri\FragmentContract;
+    
+    class Fragment implements FragmentContract
     {
         protected $fragment;
         

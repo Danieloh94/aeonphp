@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Message\Headers;
     
-    class Header
+    use \Aeon\Contract\HttpCore\Message\Headers\HeaderContract;
+    
+    class Header implements HeaderContract
     {
         protected $key;
         protected $value;
@@ -15,7 +17,7 @@
         
         public function __toString()
         {
-            return $this->key.': '.$this->value."\r\n";
+            return $this->key.':'.$this->value."\r\n";
         }
         
         public function getKey()

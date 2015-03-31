@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri;
     
-    class Path
+    use \Aeon\Contract\HttpCore\Uri\PathContract;
+    
+    class Path implements PathContract
     {
         protected $path;
         

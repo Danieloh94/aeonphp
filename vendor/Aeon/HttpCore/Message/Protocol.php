@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Message;
     
-    class Protocol
+    use \Aeon\Contract\HttpCore\Message\ProtocolContract;
+    
+    class Protocol implements ProtocolContract
     {
         protected $type;
         protected $version;

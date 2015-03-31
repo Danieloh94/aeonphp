@@ -17,7 +17,7 @@
                 new Protocol('http', 1.1)    
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Body', $message->getBody());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\BodyContract', $message->getBody());
         }
         
         public function testSetBody()
@@ -30,7 +30,7 @@
             
             $message->setBody(new Body(fopen('php://memory', 'wb+')));
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Body', $message->getBody());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\BodyContract', $message->getBody());
         }
         
         public function testGetHeaders()
@@ -41,7 +41,7 @@
                 new Protocol('http', 1.1)
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers', $message->getHeaders());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\HeadersContract', $message->getHeaders());
         }
         
         public function testSetHeaders()
@@ -54,7 +54,7 @@
             
             $message->setHeaders(new Headers());
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers', $message->getHeaders());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\HeadersContract', $message->getHeaders());
         }
         
         public function testGetProtocol()
@@ -65,7 +65,7 @@
                 new Protocol('http', 1.1)
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Protocol', $message->getProtocol());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\ProtocolContract', $message->getProtocol());
         }
         
         public function testSetProtocol()
@@ -78,6 +78,6 @@
             
             $message->setProtocol(new Protocol('http', 1.1));
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Protocol', $message->getProtocol());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\ProtocolContract', $message->getProtocol());
         }
     }

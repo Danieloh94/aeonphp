@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri\Authority;
     
-    class Host
+    use \Aeon\Contract\HttpCore\Uri\Authority\HostContract;
+    
+    class Host implements HostContract
     {
         protected $host;
         

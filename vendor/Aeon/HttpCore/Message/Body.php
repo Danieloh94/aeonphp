@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Message;
     
-    class Body
+    use \Aeon\Contract\HttpCore\Message\BodyContract;
+    
+    class Body implements BodyContract
     {
         protected $resource;       
         

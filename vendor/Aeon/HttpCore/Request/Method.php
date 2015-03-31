@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Request;
     
-    class Method
+    use \Aeon\Contract\HttpCore\Request\MethodContract;
+	
+	class Method implements MethodContract
     {
         protected $method;
         protected $valid = [

@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri;
     
-    class Scheme 
+    use \Aeon\Contract\HttpCore\Uri\SchemeContract;
+    
+    class Scheme implements SchemeContract
     {
         protected $scheme;
         

@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri;
     
-    class Query
+    use \Aeon\Contract\HttpCore\Uri\QueryContract;
+    
+    class Query implements QueryContract
     {
         protected $query;
         

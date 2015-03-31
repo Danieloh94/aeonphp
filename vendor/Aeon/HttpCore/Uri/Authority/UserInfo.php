@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Uri\Authority;
     
-    class UserInfo
+    use \Aeon\Contract\HttpCore\Uri\Authority\UserInfoContract;
+    
+    class UserInfo implements UserInfoContract
     {
         protected $user;
         protected $password;

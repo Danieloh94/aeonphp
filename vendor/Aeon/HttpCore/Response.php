@@ -2,9 +2,11 @@
 
     namespace Aeon\HttpCore;
     
-    use \Aeon\HttpCore\Response\Status;
-    
-    class Response extends Message
+    use \Aeon\Contract\HttpCore\Response\StatusContract;
+    use \Aeon\Contract\HttpCore\ResponseContract;
+    use \Aeon\HttpCore\Message;
+				    
+    class Response extends Message implements ResponseContract
     {
         protected $status;
         
@@ -17,7 +19,12 @@
         
         public function __toString()
         {
-            return (string) $this->protocol.' '.$this->status."\r\n".$this->headers."\r\n".$this->body;
+            return (string) $this->getResponseLine()."\r\n".$this->headers."\r\n".$this->body;
+        }
+        
+        public function getResponseLine()
+        {
+            return (string) $this->protocol.' '.$this->status;
         }
         
         public function getStatus()
@@ -25,7 +32,7 @@
             return $this->status;
         }
         
-        public function setStatus(Status $status)
+        public function setStatus(StatusContract $status)
         {
             $this->status = $status;
         }

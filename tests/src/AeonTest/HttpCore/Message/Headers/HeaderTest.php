@@ -10,7 +10,7 @@
         {
             $header = new Header('foo_bar', 'baz');
             
-            $this->assertSame("foo-bar: baz\r\n", $header->__toString());
+            $this->assertSame("foo-bar:baz\r\n", $header->__toString());
             
         }
         

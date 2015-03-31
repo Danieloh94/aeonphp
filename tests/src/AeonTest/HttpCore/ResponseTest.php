@@ -26,7 +26,7 @@
             $response->getBody()->write('Hello');
             
             $this->assertSame(
-                "HTTP/1.1 200 OK\r\nfoo-bar: baz\r\nbar-baz: foo\r\n\r\nHello",
+                "HTTP/1.1 200 OK\r\nfoo-bar:baz\r\nbar-baz:foo\r\n\r\nHello",
                 $response->__toString()  
             );
         }
@@ -43,7 +43,7 @@
                 new Protocol('http', 1.1)
             );
             
-            $this->assertInstanceOf('Aeon\HttpCore\Response\Status', $response->getStatus());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Response\StatusContract', $response->getStatus());
         }
         
         public function testSetStatus()
@@ -60,6 +60,6 @@
             
             $response->setStatus(new Status(201));
             
-            $this->assertInstanceOf('Aeon\HttpCore\Response\Status', $response->getStatus());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Response\StatusContract', $response->getStatus());
         }
     }

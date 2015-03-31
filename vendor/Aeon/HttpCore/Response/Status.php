@@ -2,7 +2,9 @@
 
     namespace Aeon\HttpCore\Response;
     
-    class Status
+    use \Aeon\Contract\HttpCore\Response\StatusContract;
+    
+    class Status implements StatusContract
     {
         protected $code;
         

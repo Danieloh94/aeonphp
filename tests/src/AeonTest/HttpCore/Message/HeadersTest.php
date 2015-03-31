@@ -14,7 +14,7 @@
                 new Header('bar-baz', 'foo')
             ]);
             
-            $this->assertSame("foo-bar: baz\r\nbar-baz: foo\r\n", $headers->__toString());
+            $this->assertSame("foo-bar:baz\r\nbar-baz:foo\r\n", $headers->__toString());
         }
         
         public function testGet()
@@ -23,7 +23,9 @@
                 new Header('foo_bar', 'baz')
             ]);
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers\Header', $headers->get('foo-bar'));
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\Headers\HeaderContract', $headers->get('foo-bar'));
+            
+            $this->assertInternalType('array', $headers->get());
         }
         
         public function testSet()
@@ -31,17 +33,7 @@
             $headers = new Headers();
             $headers->set(new Header('foo_bar', 'baz'));
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers\Header', $headers->get('foo-bar'));
-        }
-        
-        public function testGetAll()
-        {
-            $headers = new Headers([
-                new Header('foo-bar', 'baz'),
-                new Header('bar-baz', 'foo')
-            ]);
-            
-            $this->assertArrayHasKey('foo-bar', $headers->getAll());
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\Headers\HeaderContract', $headers->get('foo-bar'));
         }
         
         public function testSetAll()
@@ -53,8 +45,8 @@
                 new Header('bar-baz', 'foo')
             ]);
             
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers\Header', $headers->get('foo-bar'));
-            $this->assertInstanceOf('Aeon\HttpCore\Message\Headers\Header', $headers->get('bar-baz'));
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\Headers\HeaderContract', $headers->get('foo-bar'));
+            $this->assertInstanceOf('Aeon\Contract\HttpCore\Message\Headers\HeaderContract', $headers->get('bar-baz'));
             
             $this->setExpectedException('InvalidArgumentException');
             
